@@ -114,20 +114,21 @@ video.addEventListener('timeupdate', () => {
     video_range.style.background = `linear-gradient(to right, #4CAF50 ${percent}%, #d3d3d3 ${percent}%)`;
 });
 
-muteBtn.addEventListener('click', () => {
-    if (video.muted) {
-      video.muted = false;
-      mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
-    } else {
-        video.muted = true;
-        mute.innerHTML='<i class="fa-solid fa-volume-xmark"></i>'
-    }
-  });
+
   video.addEventListener('play',()=>{
     mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
   })
-  video.addEventListener('pause',()=>{
-    mute.innerHTML='<i class="fa-solid fa-volume-xmark"></i>'
+  muteBtn.addEventListener('click',()=>{
+    if (video.muted) {
+        video.muted = false;
+        mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
+        volume.value=video.volume*100;
+        
+    } else {
+        video.muted = true;
+        muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        volume.value = 0;
+    }
   })
   volume.addEventListener('input', () => {
     video.volume = volume.value;
