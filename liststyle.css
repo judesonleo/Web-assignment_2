@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.first{
+  width: 100%;
+    background-color: #c4c4;
+    float: left;
+    padding-left: 50px;
+    padding-top: 25px;
+    overflow: hidden;
+}
+.first ol , .second ul {
+    margin: 20px;
+}
+
+.second {
+   width: 100%;
+    background-color: blueviolet;
+    float: right;
+    padding-left: 50px;
+    padding-top: 25px;
+    color: rgb(250, 251, 250);
+    overflow: hidden;
+}
+
+.parent{
+    width: 100vw;
+    display: flex;
+}
+@media only screen and (max-width:300px) {
+    .parent{
+        flex-direction: column;
+    }
+} 
