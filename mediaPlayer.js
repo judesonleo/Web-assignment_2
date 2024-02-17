@@ -114,21 +114,21 @@ video.addEventListener('timeupdate', () => {
     video_range.style.background = `linear-gradient(to right, #4CAF50 ${percent}%, #d3d3d3 ${percent}%)`;
 });
 
+muteBtn.addEventListener('click',()=>{
+  if (video.muted) {
+      video.muted = false;
+      mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
+      volume.value=video.volume*100;
+      
+  } else {
+      video.muted = true;
+      muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+      volume.value = 0;
+  }
+})
 
   video.addEventListener('play',()=>{
     mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
-  })
-  muteBtn.addEventListener('click',()=>{
-    if (video.muted) {
-        video.muted = false;
-        mute.innerHTML='<i class="fa-solid fa-volume-high"></i>'
-        volume.value=video.volume*100;
-        
-    } else {
-        video.muted = true;
-        muteBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-        volume.value = 0;
-    }
   })
   volume.addEventListener('input', () => {
     video.volume = volume.value;
@@ -137,6 +137,9 @@ video.addEventListener('timeupdate', () => {
     if (video.requestFullscreen) {
       video.requestFullscreen();
     } else if (video.webkitRequestFullscreen) { /* Safari */
-      video.webkitRequestFullscreen();
-}
+        video.webkitRequestFullscreen();
+    }
+    else if (video.webkitRequestFullscreen) { /* Safari and iOS */
+        video.webkitEnterFullscreen(); // Apple's Fullscreen API for iOS
+    }
   });
