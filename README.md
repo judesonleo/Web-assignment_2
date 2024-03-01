@@ -1,3 +1,3 @@
 # Web-assignment_2
 ## Media tags
-![Screenshot 2024-02-17 at 9 58 44 AM](https://github.com/judesonleo/Web-assignment_2/assets/77841006/e909699e-7bc6-4ea9-bc45-d169c1f87746)
+![Screenshot 2024-03-01 at 6 57 48 PM](https://github.com/judesonleo/Web-assignment_2/assets/77841006/7fc744fa-13b4-4092-b62d-5fc7784e93bd)
